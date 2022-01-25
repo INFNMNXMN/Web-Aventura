@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv = "Content-Type" content="text/html; charset=utf-8">
+        <style> 
+        body{max-width:30rem;margin:0 auto}.m_text{background-color:rgb(255, 80, 168);padding:2em;margin-bottom:2em;font-size:x-large}
+        </style>
+    </head>
+    <body>
+        <u></u>
+        <div>
+         <header>
+                    <h1>Benvingut a la teva aventura, llegeix i disfruta!</h1>
+                </header>
+         <u></u>
+                    <header>
+                        <div>Pagina</div>
+                    </header>
+                    <section class="m_text">Text</section>
+                    <footer>
+                        <button>Sí</button>
+                        <button>No</button>
+                    </footer>
+                <u></u>
+            </div>
+        
+        </body></html>
+    <style>
+    body{max-width:30rem;margin:0 auto}.m_text{background-color:rgb(255, 80, 80);padding:2em;margin-bottom:2em;font-size:x-large}
+    </style>
+</head>
+<body>
+    <u></u> 
+    <div>
+        <header>
+            <h1><Benvingut a la teva aventura, llegeix i disfruta!></Benvingut> </h1>
+            </header>
+            <u> </u>
+                <header> <div>pagina</div>
+                </header>
+                <section class= "m-text">Vols contractar una hipoteca?</section>
+                <footer> 
+                    <button>Sí</button>
+                    <button>No</button>
+                </footer> 
+                <main>
+                    <header>
+                        <div>Pagina</div>
+                    </header>
+                    <section class="text">benvingut</section>
+                    <footer>
+                        <button onclick="ferSi()">Sí</button>
+                        <button onclick="ferNo()">No</button>
+                    </footer>
+                </main>
+                <script> 
+                
+            let historia = [
+                {text:'benvingut'},
+                {text:'continuem'}
+            ]
+            let pagina = 0;
+            let text = document.querySelector('.text');
+            text.textContent = historia[pagina].text;
+
+            function ferSi() {
+                pagina = pagina + 1;
+                text.textContent = historia[pagina].text;
+            }
+            function ferNo() {
+                pagina = pagina - 1;
+                text.textContent = historia[pagina].text;
+            }
+        
+                </script>
+            <u></u>
+        </div>
+           
+</body>
+</html>
