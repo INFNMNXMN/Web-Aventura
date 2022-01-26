@@ -6,75 +6,90 @@
         body{max-width:30rem;margin:0 auto}.m_text{background-color:rgb(255, 80, 168);padding:2em;margin-bottom:2em;font-size:x-large}
         </style>
     </head>
-    <body>
-        <u></u>
-        <div>
-         <header>
-                    <h1>Benvingut a la teva aventura, llegeix i disfruta!</h1>
-                </header>
-         <u></u>
-                    <header>
-                        <div>Pagina</div>
-                    </header>
-                    <section class="m_text">Text</section>
-                    <footer>
-                        <button>Sí</button>
-                        <button>No</button>
-                    </footer>
-                <u></u>
-            </div>
-        
-        </body></html>
+   
     <style>
     body{max-width:30rem;margin:0 auto}.m_text{background-color:rgb(255, 80, 80);padding:2em;margin-bottom:2em;font-size:x-large}
-    </style>
-</head>
-<body>
-    <u></u> 
-    <div>
-        <header>
-            <h1><Benvingut a la teva aventura, llegeix i disfruta!></Benvingut> </h1>
+    </style>    
+
+    <body>
+        <u></u> 
+        <div>
+            <header>
+                <h1><Benvingut a la teva aventura, llegeix i disfruta!></Benvingut> </h1>
             </header>
             <u> </u>
-                <header> <div>pagina</div>
-                </header>
-                <section class= "m-text">Vols contractar una hipoteca?</section>
-                <footer> 
-                    <button>Sí</button>
-                    <button>No</button>
-                </footer> 
+                
                 <main>
-                    <header>
-                        <div>Pagina</div>
-                    </header>
-                    <section class="text">benvingut</section>
+                    <div>
+                        <h1>Benvingut a la teva aventura, llegeix i disfruta!</h1>
+                    </div>
+                    <button onclick="reinici()">Reiniciar</button>
+                    <div>Pagina del questionario</div><div id="PAG"></div>
+                            
+                   
+                    <section style="background-color:rgb(255, 80, 80);padding:2em;margin-bottom:2em;font-size:x-large;color:aliceblue;" ><p class="text" ></p><div id="HIST"></div></section>
                     <footer>
-                        <button onclick="ferSi()">Sí</button>
-                        <button onclick="ferNo()">No</button>
+                        <button id="buttY" onclick="ferSi()">Sí</button>
+                        <button id="buttN" onclick="ferNo()">No</button>
+                        
                     </footer>
                 </main>
                 <script> 
                 
-            let historia = [
-                {text:'benvingut'},
-                {text:'continuem'}
-            ]
+            const historia = [];
+              historia[0]="Wellcome al cuestionario";
+              historia[1]="respuesta 1, pregunta 2";
+              historia[2]="respuesta 2, pregunta 3";
+              historia[3]="respuesta 3, pregunta 4";
+              historia[4]="respuesta 4, pregunta 5";
+              historia[5]="respuesta 5, pregunta 6";
+              historia[6]="respuesta 6, pregunta 7";
+              historia[7]="respuesta 7, pregunta 8    ";
+              document.getElementById("HIST").innerHTML = "Wellcome al cuestionario";
             let pagina = 0;
             let text = document.querySelector('.text');
             text.textContent = historia[pagina].text;
+            
 
             function ferSi() {
                 pagina = pagina + 1;
                 text.textContent = historia[pagina].text;
+                document.getElementById("PAG").innerHTML = pagina;
+                document.getElementById("HIST").innerHTML = historia[pagina];
             }
-            function ferNo() {
+            /*function ferNo() {
                 pagina = pagina - 1;
                 text.textContent = historia[pagina].text;
+                document.getElementById("PAG").innerHTML = pagina;
+                document.getElementById("HIST").innerHTML = historia[pagina];
+            }*/
+            /*Ejemplo de si en una pregunta en concreto volvemos a 0 y ocultamos el boton Si*/
+            function ferNo() {
+                if (pagina==5){
+                    pagina = 0;
+                    text.textContent = historia[pagina].text;
+                    document.getElementById("PAG").innerHTML = pagina;
+                    document.getElementById("HIST").innerHTML = "No se puede continuar con el cuestionario";
+                    document.getElementById("buttY").style.display ='none';
+                }else{
+                    pagina = pagina - 1;
+                    text.textContent = historia[pagina].text;
+                    document.getElementById("PAG").innerHTML = pagina;
+                    document.getElementById("HIST").innerHTML = historia[pagina];
+                }
+                
+             
             }
-        
+            function reinici() {
+                pagina = 0;
+                text.textContent = historia[pagina].text;
+                document.getElementById("PAG").innerHTML = pagina;
+                document.getElementById("HIST").innerHTML = historia[0];
+                document.getElementById("buttY").style.display ='inline';
+            }
                 </script>
             <u></u>
         </div>
            
-</body>
+    </body>
 </html>
