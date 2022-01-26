@@ -63,16 +63,14 @@
                 <script> 
                 
             const historia = [];
-              historia[0]="Wellcome al cuestionario";
-              historia[1]="respuesta 1, pregunta 2";
-              historia[2]="respuesta 2, pregunta 3";
-              historia[3]="respuesta 3, pregunta 4";
-              historia[4]="respuesta 4, pregunta 5";
-              historia[5]="respuesta 5, pregunta 6";
-              historia[6]="respuesta 6, pregunta 7";
-              historia[7]="respuesta 7, pregunta 8";
-              historia[8]="Cuestionario finalizado";
-              document.getElementById("HIST").innerHTML = "Wellcome al cuestionario";
+              historia[0]="Bienvenido al cuestionario para conocer la viabilidad de su nueva hipoteca, pulse sí";
+              historia[1]="¿Puede aportar un mínimo del 30% del valor de compra-venta de la finca a adquirir?";
+              historia[2]="¿La cuota de la hipoteca és igual o inferior al 30% de sus ingresos netos"
+              historia[3]="Existe la posibilidad de...";
+              historia[4]="Lamento comunicar";
+              historia[5]="Perfecto, puede aportar ";
+              historia[6]="Cuestionario finalizado";
+              document.getElementById("HIST").innerHTML = "Bienvenido al cuestionario para conocer la viabilidad de su nueva hipoteca, pulse sí";
             let pagina = 0;
             let text = document.querySelector('.text');
             text.textContent = historia[pagina].text;
@@ -80,10 +78,25 @@
             
 
             function ferSi() {
-                pagina = pagina + 1;
-                text.textContent = historia[pagina].text;
-                document.getElementById("PAG").innerHTML = "Pantalla cuestionario " + pagina;
-                document.getElementById("HIST").innerHTML = historia[pagina];
+                if (pagina==1){
+                    pagina = 2  ;
+                    text.textContent = historia[pagina].text;
+                    document.getElementById("PAG").innerHTML = "Pantalla cuestionario " + pagina;
+                    document.getElementById("HIST").innerHTML = historia[pagina];
+
+                }else if(pagina==2||pagina==3){
+                    pagina = 5;
+                    text.textContent = historia[pagina].text;
+                    document.getElementById("PAG").innerHTML = "Pantalla cuestionario " + pagina;
+                    document.getElementById("HIST").innerHTML = historia[pagina];
+                    document.getElementById("buttY").style.display ='none';
+                    document.getElementById("buttN").style.display ='none';
+                }else{
+                    pagina = pagina + 1;
+                    text.textContent = historia[pagina].text;
+                    document.getElementById("PAG").innerHTML = "Pantalla cuestionario " + pagina;
+                    document.getElementById("HIST").innerHTML = historia[pagina];
+                }
             }
             /*function ferNo() {
                 pagina = pagina - 1;
@@ -93,13 +106,19 @@
             }*/
             /*Ejemplo de si en una pregunta en concreto volvemos a 0 y ocultamos el boton Si y No*/
             function ferNo() {
-                if (pagina==5){
-                    pagina = 0;
+                if (pagina == 1||pagina == 3){
+                    pagina = 4;
                     text.textContent = historia[pagina].text;
                     document.getElementById("PAG").innerHTML = "Pantalla cuestionario " + pagina;
-                    document.getElementById("HIST").innerHTML = "No se puede continuar con el cuestionario";
+                    document.getElementById("HIST").innerHTML = historia[pagina];
                     document.getElementById("buttY").style.display ='none';
                     document.getElementById("buttN").style.display ='none';
+                }else if (pagina == 2){
+                    pagina = 3;
+                    text.textContent = historia[pagina].text;
+                    document.getElementById("PAG").innerHTML = "Pantalla cuestionario " + pagina;
+                    document.getElementById("HIST").innerHTML = historia[pagina];
+                    
                 }else{
                     pagina = pagina - 1;
                     text.textContent = historia[pagina].text;
