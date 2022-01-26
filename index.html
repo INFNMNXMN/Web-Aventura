@@ -3,13 +3,38 @@
     <head>
         <meta http-equiv = "Content-Type" content="text/html; charset=utf-8">
         <style> 
-        body{max-width:30rem;margin:0 auto}.m_text{background-color:rgb(255, 80, 168);padding:2em;margin-bottom:2em;font-size:x-large}
+        body{
+            max-width:30rem;
+            margin:0 auto
+        }
+        .m_text{
+            background-color:rgb(255, 80, 168);
+            padding:2em;
+            margin-bottom:2em;
+            font-size:x-large
+        }
+        .button {
+            background-color: #358a38;
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+          }
         </style>
     </head>
    
   
 
     <body>
+      
+        
+        
+        
         <u></u> 
         <div>
             <header>
@@ -22,15 +47,15 @@
                         <h1>Benvingut a la teva aventura, llegeix i disfruta!</h1>
                     </div>
                     
-                    <button onclick="reinici()">Reiniciar</button><div id="PAG"></div>
+                    <button class="button" onclick="reinici()">Reiniciar</button><div id="PAG"></div>
                             
                    
-                    <section style="background-color:rgb(255, 80, 80);padding:2em;text-align: center;font-size:x-large;color:white;" ><p class="text" ></p><div id="HIST"></div></section>
-                    <footer>
-                        <button id="buttY" onclick="ferSi()">Sí</button>
-                        <button id="buttN" onclick="ferNo()">No</button>
+                    <section style="background-color:rgb(184, 175, 175);padding:2em;text-align: center;font-size:x-large;color:white;" ><p class="text" ></p><div id="HIST"></div></section>
+                    <div style="align-self: center;">
+                        <button class="button"  id="buttY" onclick="ferSi()">Sí</button>
+                        <button class="button"  id="buttN" onclick="ferNo()">No</button>
                         
-                    </footer>
+                    </div>
                 </main>
                 <script> 
                 
