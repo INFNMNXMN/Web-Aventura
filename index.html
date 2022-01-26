@@ -16,6 +16,7 @@
         .button {
             background-color: #358a38;
             border: none;
+            border-radius: 10px;
             color: white;
             padding: 15px 32px;
             text-align: center;
@@ -24,6 +25,7 @@
             font-size: 16px;
             margin: 4px 2px;
             cursor: pointer;
+            
           }
         </style>
     </head>
@@ -47,11 +49,12 @@
                         <h1>Benvingut a la teva aventura, llegeix i disfruta!</h1>
                     </div>
                     
-                    <button class="button" onclick="reinici()">Reiniciar</button><div id="PAG"></div>
+                    <button class="button" onclick="reinici()">Reiniciar</button>
                             
                    
-                    <section style="background-color:rgb(184, 175, 175);padding:2em;text-align: center;font-size:x-large;color:white;" ><p class="text" ></p><div id="HIST"></div></section>
-                    <div style="align-self: center;">
+                    <section style="background-color:rgb(184, 175, 175);height: 100px;text-align:center;line-height: 100px;font-size:x-large;color:white;border-radius: 10px;" ><p class="text" ></p><div id="HIST"></div></section>
+                    <div>
+                        <div id="PAG" style="text-align: center;"></div>
                         <button class="button"  id="buttY" onclick="ferSi()">Sí</button>
                         <button class="button"  id="buttN" onclick="ferNo()">No</button>
                         
