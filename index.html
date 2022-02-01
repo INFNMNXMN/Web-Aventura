@@ -3,19 +3,22 @@
     <head>
         <meta http-equiv = "Content-Type" content="text/html; charset=utf-8">
         <style> 
+        
         body{
+
+            background-image: url(oficina.jpg);
             max-width:30rem;
-            margin:0 auto
-            background-image:auto;image
+            margin:0 auto;
+        
         }
         .m_text{
             background-color:rgb(255, 80, 168);
-            padding:2em;
+            padding: 2em;
             margin-bottom:2em;
             font-size:x-large
         }
         .button {
-            background-color: #358a38;
+            background-color: #4298ca;
             border: none;
             border-radius: 10px;
             color: white;
@@ -26,8 +29,10 @@
             font-size: 16px;
             margin: 4px 2px;
             cursor: pointer;
+       
             
           }
+          
         </style>
     </head>
    
@@ -53,7 +58,7 @@
                     <button class="button" onclick="reinici()">Reiniciar</button>
                             
                    
-                    <section style="background-color:rgb(184, 175, 175);height: 100px;text-align:center;line-height: 100px;font-size:x-large;color:white;border-radius: 10px;" ><p class="text" ></p><div id="HIST"></div></section>
+                    <section style="background-color:rgb(184, 175, 175); padding: 20%;text-align:center;font-size:x-large;color:white;border-radius: 10px;" ><p class="text" ></p><div id="HIST"></div></section>
                     <div>
                         <div id="PAG" style="text-align: center;"></div>
                         <button class="button"  id="buttY" onclick="ferSi()">Sí</button>
@@ -67,9 +72,9 @@
               historia[0]="Bienvenido al cuestionario para conocer la viabilidad de su nueva hipoteca, pulse sí";
               historia[1]="¿Puede aportar un mínimo del 30% del valor de compra-venta de la finca a adquirir?";
               historia[2]="¿La cuota de la hipoteca és igual o inferior al 30% de sus ingresos netos"
-              historia[3]="Existe la posibilidad de...";
-              historia[4]="Lamento comunicar";
-              historia[5]="Perfecto, puede aportar ";
+              historia[3]="Existe la posibilidad de incorporar a otro titular en la operación hipotecaria";
+              historia[4]="Lamento comunicar que en estos términos, la operación no es viable";
+              historia[5]="Perfecto, puede aportar la documentación para la realización del estudio";
               historia[6]="Cuestionario finalizado";
               document.getElementById("HIST").innerHTML = "Bienvenido al cuestionario para conocer la viabilidad de su nueva hipoteca, pulse sí";
             let pagina = 0;
